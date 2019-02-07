@@ -126,7 +126,7 @@ endif
 
 # llvm sometimes requires ncurses and libz, check if they have the symbols, and add them if they do
 ifeq ($(shell nm $(LLVM_PREFIX)/lib/libLLVMSupport.a | grep setupterm >/dev/null 2>&1; echo $$?), 0)
-    SUPPORT_LIBRARY_FLAGS += -lcurses 
+    SUPPORT_LIBRARY_FLAGS += /home/condor/mpokorny/spack/opt/spack/linux-rhel6-x86_64/gcc-7.4.0/ncurses-6.1-nciqcaopaecqndrzrkizakgvm3xlm645/lib/libcurses.so /home/condor/mpokorny/spack/opt/spack/linux-rhel6-x86_64/gcc-7.4.0/ncurses-6.1-nciqcaopaecqndrzrkizakgvm3xlm645/lib/libform.so
 endif
 ifeq ($(shell nm $(LLVM_PREFIX)/lib/libLLVMSupport.a | grep compress2 >/dev/null 2>&1; echo $$?), 0)
     SUPPORT_LIBRARY_FLAGS += -lz
